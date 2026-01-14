@@ -1,0 +1,48 @@
+---
+// About: Brief bio and what drives the work
+---
+
+<section class="py-24 border-t border-border">
+  <div class="container-narrow">
+    <div class="grid md:grid-cols-3 gap-12 reveal">
+
+      <!-- Left: Section label -->
+      <div>
+        <h2 class="text-sm font-mono text-text-muted uppercase tracking-wider">About</h2>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="md:col-span-2 space-y-6">
+        <p class="text-lg text-text-secondary leading-relaxed">
+          I'm a data leader who believes analytics should drive decisions, not just decorate dashboards.
+          Currently building analytics products that translate complex datasets into clear business outcomes.
+        </p>
+
+        <p class="text-lg text-text-secondary leading-relaxed">
+          My work spans the full stack: from Python and ML models to Power BI semantic layers to
+          the change management that gets people actually using the tools. I care about the craft—clean
+          data models, clear visualizations, documentation that respects the reader's time.
+        </p>
+
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Outside of work, I coach a FIRST LEGO League robotics team and volunteer data science skills
+          for local nonprofits. I believe in building things with intention, whether it's a dashboard
+          or a kid's confidence in debugging their first robot.
+        </p>
+
+        <!-- Skills/Tools -->
+        <div class="pt-6 border-t border-border">
+          <h3 class="text-sm font-mono text-text-muted uppercase tracking-wider mb-4">Tools & Technologies</h3>
+          <div class="flex flex-wrap gap-2">
+            {['Power BI', 'Microsoft Fabric', 'Python', 'SQL', 'DAX', 'Azure', 'Machine Learning', 'Git'].map((skill) => (
+              <span class="text-sm font-mono text-text-secondary px-3 py-1 rounded-full border border-border">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
