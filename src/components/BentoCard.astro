@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags?: string[];
+  span?: 'normal' | 'wide' | 'tall';
+  href?: string;
+}
+
+const { title, description, tags = [], span = 'normal', href } = Astro.props;
+
+const spanClasses = {
+  normal: '',
+  wide: 'md:col-span-2',
+  tall: 'md:row-span-2',
+};
+---
+
+<article 
+  class:list={[
+    'reveal group relative p-6 rounded-2xl border border-border bg-surface-raised',
+    'hover:border-border-hover hover:bg-surface-overlay transition-all duration-300',
+    spanClasses[span]
+  ]}
+>
+  {href ? (
+    <a href={href} class="absolute inset-0 z-10" aria-label={`View ${title} project`}>
+      <span class="sr-only">View project</span>
+    </a>
+  ) : null}
+  
+  <div class="flex flex-col h-full">
+    <h3 class="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    
+    <p class="text-text-secondary leading-relaxed flex-grow">
+      {description}
+    </p>
+    
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-border">
+        {tags.map((tag) => (
+          <span class="text-xs font-mono text-text-muted px-2 py-1 rounded bg-surface">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+  
+  <!-- Hover arrow indicator -->
+  {href && (
+    <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+      <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17" />
+      </svg>
+    </div>
+  )}
+</article>

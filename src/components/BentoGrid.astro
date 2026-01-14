@@ -1,0 +1,57 @@
+---
+import BentoCard from './BentoCard.astro';
+
+// These would eventually come from markdown files in src/content/projects/
+const projects = [
+  {
+    title: 'Market Penetration Model',
+    description: 'Architected a zip-code-level planning model with 100+ data features, enabling targeted strategy and optimized resource allocation for residential energy market expansion.',
+    tags: ['Power BI', 'Python', 'DAX', 'Machine Learning'],
+    span: 'wide' as const,
+  },
+  {
+    title: 'Unified Marketing Analytics',
+    description: 'Integrated advertising and CRM data into a Power BI DataMart, providing clear insights into ROAS, CPL, and cost-per-sale across channels.',
+    tags: ['Power BI', 'Microsoft Fabric', 'SQL'],
+    span: 'normal' as const,
+  },
+  {
+    title: 'Food Bank ML Segmentation',
+    description: 'Volunteered data science skills to segment client populations and inform targeted outreach, supporting more equitable community engagement.',
+    tags: ['Python', 'Machine Learning', 'Data Science'],
+    span: 'normal' as const,
+  },
+  {
+    title: 'Self-Service Analytics Migration',
+    description: 'Replaced static PDF reports with interactive Power BI dashboards, eliminating 90% of manual reporting workload and earning Sales MVP recognition.',
+    tags: ['Power BI', 'SAP BI', 'Change Management'],
+    span: 'normal' as const,
+  },
+  {
+    title: 'FIRST LEGO League Coaching',
+    description: 'Mentoring the next generation in robotics, programming, and teamwork. Teaching kids that building things is about iteration, not perfection.',
+    tags: ['STEM Education', 'Robotics', 'Mentorship'],
+    span: 'normal' as const,
+  },
+];
+---
+
+<section class="py-24 container-wide">
+  <div class="mb-12 reveal">
+    <h2 class="text-3xl font-semibold mb-4">Selected Work</h2>
+    <p class="text-text-secondary max-w-2xl">
+      A few things I've built, analyzed, or helped bring to life.
+    </p>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {projects.map((project, index) => (
+      <BentoCard 
+        title={project.title}
+        description={project.description}
+        tags={project.tags}
+        span={project.span}
+      />
+    ))}
+  </div>
+</section>
