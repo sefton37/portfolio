@@ -1,42 +1,55 @@
 ---
 import BentoCard from './BentoCard.astro';
 
-// These would eventually come from markdown files in src/content/projects/
 const projects = [
   {
-    title: 'Market Penetration Model',
-    description: 'Architected a zip-code-level planning model with 100+ data features, enabling targeted strategy and optimized resource allocation for residential energy market expansion.',
-    tags: ['Power BI', 'Python', 'DAX', 'Machine Learning'],
+    title: 'Talking Rock',
+    description: 'A local-first AI assistant prioritizing privacy and offline functionality. Features CAIRN for life organization, ReOS for natural language system control, and runs on modest hardware.',
+    tags: ['Python', 'AI', 'Local-First', 'Privacy'],
     span: 'wide' as const,
-    href: '#', // TODO: Add project URL
+    href: 'https://github.com/sefton37/talking_rock',
   },
   {
-    title: 'Unified Marketing Analytics',
-    description: 'Integrated advertising and CRM data into a Power BI DataMart, providing clear insights into ROAS, CPL, and cost-per-sale across channels.',
-    tags: ['Power BI', 'Microsoft Fabric', 'SQL'],
+    title: 'Great Minds Roundtable',
+    description: 'AI-powered debate simulator where historical political thinkers like Locke, Hayek, and Foucault respond to questions in their characteristic voice with attributed quotes.',
+    tags: ['Claude Artifact', 'AI', 'Education'],
     span: 'normal' as const,
-    href: '#', // TODO: Add project URL
+    href: 'https://claude.ai/public/artifacts/acd7153c-f8d3-4932-991c-2dd08a131a6e',
   },
   {
-    title: 'Food Bank ML Segmentation',
-    description: 'Volunteered data science skills to segment client populations and inform targeted outreach, supporting more equitable community engagement.',
-    tags: ['Python', 'Machine Learning', 'Data Science'],
+    title: 'Total Cost of Inflation',
+    description: 'Interactive dashboard visualizing 50+ years of economic data, comparing purchasing power across income brackets and tracking healthcare, housing, and education costs.',
+    tags: ['Claude Artifact', 'Data Viz', 'Economics'],
     span: 'normal' as const,
-    href: '#', // TODO: Add project URL
+    href: 'https://claude.ai/public/artifacts/820dd661-5aaf-4211-8cdc-f70857ce46e6',
   },
   {
-    title: 'Self-Service Analytics Migration',
-    description: 'Replaced static PDF reports with interactive Power BI dashboards, eliminating 90% of manual reporting workload and earning Sales MVP recognition.',
-    tags: ['Power BI', 'SAP BI', 'Change Management'],
+    title: 'Prefect',
+    description: 'Server-side AI steward for managing game servers. Provides process management, log monitoring, and command execution with safety guardrails through MCP and Qt interfaces.',
+    tags: ['Python', 'MCP', 'Game Servers', 'AI'],
     span: 'normal' as const,
-    href: '#', // TODO: Add project URL
+    href: 'https://github.com/sefton37/Prefect',
   },
   {
-    title: 'FIRST LEGO League Coaching',
-    description: 'Mentoring the next generation in robotics, programming, and teamwork. Teaching kids that building things is about iteration, not perfection.',
-    tags: ['STEM Education', 'Robotics', 'Mentorship'],
+    title: 'Ukraine Conflict OSINT Reader',
+    description: 'Intelligence dashboard aggregating open-source analysis from ISW, CSIS, and RUSI with AI-generated summaries, geospatial visualization, and priority filtering.',
+    tags: ['Claude Artifact', 'OSINT', 'Geopolitics'],
     span: 'normal' as const,
-    href: '#', // TODO: Add project URL
+    href: 'https://claude.ai/public/artifacts/a59d851d-06f1-4fcc-b755-324781c13713',
+  },
+  {
+    title: 'Portfolio',
+    description: 'This site. Built with Astro and Tailwind, self-hosted on DigitalOcean with hardened nginx. Features a self-hosted Mistral instance for the chat component.',
+    tags: ['Astro', 'Tailwind', 'Self-Hosted'],
+    span: 'normal' as const,
+    href: 'https://github.com/sefton37/portfolio',
+  },
+  {
+    title: 'Connect on LinkedIn',
+    description: 'View my professional background, experience, and connect with me.',
+    tags: ['LinkedIn'],
+    span: 'normal' as const,
+    href: 'https://www.linkedin.com/in/kelloggbrengel/',
   },
 ];
 ---
