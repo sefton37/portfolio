@@ -12,8 +12,8 @@ export default {
         // Neutral palette - warm grays
         surface: {
           DEFAULT: '#0a0a0a',
-          raised: '#141414',
-          overlay: '#1a1a1a',
+          raised: '#111318',
+          overlay: '#181b22',
         },
         text: {
           primary: '#fafafa',
@@ -21,13 +21,20 @@ export default {
           muted: '#525252',
         },
         accent: {
-          DEFAULT: '#3b82f6',
-          hover: '#60a5fa',
-          muted: '#1e3a5f',
+          DEFAULT: '#22d3ee',
+          hover: '#67e8f9',
+          muted: '#164e63',
+          dim: '#0e7490',
         },
         border: {
-          DEFAULT: '#262626',
-          hover: '#404040',
+          DEFAULT: '#1e293b',
+          hover: '#0e7490',
+        },
+        cyan: {
+          DEFAULT: '#06b6d4',
+          light: '#22d3ee',
+          dark: '#0891b2',
+          glow: 'rgba(6, 182, 212, 0.15)',
         }
       },
       animation: {
