@@ -1,67 +1,49 @@
 ---
 // Chat: AI assistant interface
-// Initially a placeholder - will connect to self-hosted Mistral
-// The component itself demonstrates the AI/ML claims on the resume
+// Inline chat section - connects to self-hosted Mistral
 ---
 
-<aside 
-  id="chat-widget"
-  class="fixed bottom-6 right-6 z-50"
->
-  <!-- Collapsed state: just a button -->
-  <button 
-    id="chat-toggle"
-    class="w-14 h-14 rounded-full bg-accent hover:bg-accent-hover transition-colors flex items-center justify-center shadow-lg"
-    aria-label="Chat with AI assistant"
+<section class="py-24 container-wide">
+  <div class="mb-12 reveal">
+    <h2 class="text-3xl font-semibold mb-4">Chat with Talking Rock</h2>
+    <p class="text-text-secondary max-w-2xl">
+      Kellogg's AI assistant, running on his home server. Ask about his work, skills, or approach to data problems.
+    </p>
+  </div>
+
+  <div
+    id="chat-container"
+    class="reveal max-w-3xl mx-auto bg-surface-raised border border-border rounded-2xl overflow-hidden"
   >
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-    </svg>
-  </button>
-  
-  <!-- Expanded state: chat interface (hidden by default) -->
-  <div 
-    id="chat-panel"
-    class="hidden absolute bottom-16 right-0 w-80 md:w-96 h-[28rem] bg-surface-raised border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
-  >
-    <!-- Header -->
-    <div class="p-4 border-b border-border flex items-center justify-between">
-      <div>
-        <h3 class="font-semibold">Ask me anything</h3>
-        <p class="text-xs text-text-muted">Powered by self-hosted AI</p>
-      </div>
-      <button 
-        id="chat-close"
-        class="p-1 hover:bg-surface rounded transition-colors"
-        aria-label="Close chat"
-      >
-        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    
     <!-- Messages area -->
-    <div id="chat-messages" class="flex-grow overflow-y-auto p-4 space-y-4">
-      <div class="text-sm text-text-secondary">
-        <p>Hi! I'm an AI assistant running on Kel's home server. Ask me about his work, skills, or approach to data problems.</p>
+    <div id="chat-messages" class="h-80 overflow-y-auto p-6 space-y-4">
+      <div class="flex gap-3">
+        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div class="text-sm text-text-secondary bg-surface rounded-lg p-3 max-w-[80%]">
+          <p>Hi! I'm Talking Rock, Kellogg's AI assistant running on his home server. Ask me about his work, skills, or approach to data problems.</p>
+        </div>
       </div>
     </div>
-    
+
     <!-- Input area -->
-    <div class="p-4 border-t border-border">
-      <div class="flex gap-2">
-        <input 
-          type="text" 
+    <div class="p-4 border-t border-border bg-surface-overlay">
+      <div class="flex gap-3">
+        <input
+          type="text"
           id="chat-input"
           placeholder="Type a message..."
-          class="flex-grow px-3 py-2 bg-surface border border-border rounded-lg text-sm focus:outline-none focus:border-accent transition-colors"
+          class="flex-grow px-4 py-3 bg-surface border border-border rounded-xl text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent transition-colors"
         />
-        <button 
+        <button
           id="chat-send"
-          class="px-4 py-2 bg-accent hover:bg-accent-hover rounded-lg transition-colors"
+          class="px-5 py-3 bg-accent hover:bg-accent-hover rounded-xl transition-colors flex items-center gap-2"
           aria-label="Send message"
         >
+          <span class="text-sm font-medium text-white hidden sm:inline">Send</span>
           <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
           </svg>
@@ -69,47 +51,44 @@
       </div>
     </div>
   </div>
-</aside>
+</section>
 
 <script>
-  const toggle = document.getElementById('chat-toggle');
-  const panel = document.getElementById('chat-panel');
-  const close = document.getElementById('chat-close');
   const input = document.getElementById('chat-input');
   const send = document.getElementById('chat-send');
   const messages = document.getElementById('chat-messages');
 
-  toggle?.addEventListener('click', () => {
-    panel?.classList.toggle('hidden');
-    input?.focus();
-  });
+  const addMessage = (text: string, isUser: boolean) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'flex gap-3' + (isUser ? ' flex-row-reverse' : '');
 
-  close?.addEventListener('click', () => {
-    panel?.classList.add('hidden');
-  });
+    const avatar = document.createElement('div');
+    avatar.className = `w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${isUser ? 'bg-surface-overlay' : 'bg-accent'}`;
+    avatar.innerHTML = isUser
+      ? `<svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>`
+      : `<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`;
 
-  // Placeholder for actual AI integration
-  // TODO: Connect to self-hosted Mistral endpoint
+    const bubble = document.createElement('div');
+    bubble.className = `text-sm rounded-lg p-3 max-w-[80%] ${isUser ? 'bg-accent/10 text-text-primary' : 'bg-surface text-text-secondary'}`;
+    bubble.textContent = text;
+
+    wrapper.appendChild(avatar);
+    wrapper.appendChild(bubble);
+    messages?.appendChild(wrapper);
+    messages?.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
+  };
+
   const sendMessage = async () => {
     const text = (input as HTMLInputElement)?.value.trim();
     if (!text) return;
-    
-    // Add user message to UI
-    const userMsg = document.createElement('div');
-    userMsg.className = 'text-sm bg-accent/10 rounded-lg p-3 ml-8';
-    userMsg.textContent = text;
-    messages?.appendChild(userMsg);
-    
-    // Clear input
+
+    addMessage(text, true);
     (input as HTMLInputElement).value = '';
-    
-    // Placeholder response
-    const botMsg = document.createElement('div');
-    botMsg.className = 'text-sm text-text-secondary';
-    botMsg.textContent = 'AI backend coming soon. This will connect to a self-hosted Mistral instance.';
-    messages?.appendChild(botMsg);
-    
-    messages?.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
+
+    // Placeholder response - TODO: Connect to self-hosted Mistral
+    setTimeout(() => {
+      addMessage('Talking Rock backend coming soon. This will connect to Kellogg\'s self-hosted AI.', false);
+    }, 500);
   };
 
   send?.addEventListener('click', sendMessage);
