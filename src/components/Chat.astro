@@ -6,7 +6,7 @@
 const apiUrl = import.meta.env.PUBLIC_CHAT_API_URL || 'http://localhost:8000';
 ---
 
-<section class="py-24 container-wide">
+<section class="py-24 container-wide px-8 sm:px-12 lg:px-16">
   <div class="mb-12 reveal">
     <h2 class="text-3xl font-semibold mb-4">Chat with <span class="text-accent">Talking Rock</span></h2>
     <p class="text-text-secondary max-w-2xl">
@@ -20,7 +20,7 @@ const apiUrl = import.meta.env.PUBLIC_CHAT_API_URL || 'http://localhost:8000';
     data-api-url={apiUrl}
   >
     <!-- Messages area -->
-    <div id="chat-messages" class="h-80 overflow-y-auto p-6 space-y-4">
+    <div id="chat-messages" class="h-[512px] overflow-y-auto p-6 space-y-4">
       <div class="flex gap-3">
         <div class="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-dim flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(6,182,212,0.3)]">
           <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -31,11 +31,11 @@
 
 @layer components {
   .container-narrow {
-    @apply max-w-4xl mx-auto px-6;
+    @apply max-w-4xl mx-auto px-8 sm:px-12 lg:px-16;
   }
 
   .container-wide {
-    @apply max-w-6xl mx-auto px-6;
+    @apply max-w-6xl mx-auto px-8 sm:px-12 lg:px-16;
   }
 
   /* Intersection observer animations */
