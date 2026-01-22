@@ -95,8 +95,8 @@ const apiUrl = import.meta.env.PUBLIC_CHAT_API_URL || 'http://localhost:8000';
 
     const bubble = document.createElement('div');
     bubble.className = isUser
-      ? 'text-sm rounded-lg p-3 max-w-[80%] bg-surface-overlay border border-border text-text-primary'
-      : 'text-sm rounded-lg p-3 max-w-[80%] bg-accent/5 border border-accent/10 text-text-secondary';
+      ? 'text-sm rounded-lg p-3 max-w-[80%] bg-surface-overlay border border-border text-text-primary whitespace-pre-wrap'
+      : 'text-sm rounded-lg p-3 max-w-[80%] bg-accent/5 border border-accent/10 text-text-secondary whitespace-pre-wrap';
 
     if (isTyping) {
       bubble.innerHTML = typingIndicatorHtml;
