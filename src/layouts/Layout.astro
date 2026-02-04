@@ -34,9 +34,7 @@ const {
     <meta property="og:url" content="https://kellogg.brengel.com" />
     
     <!-- Prevent flash of unstyled content -->
-    <script is:inline>
-      document.documentElement.classList.add('dark');
-    </script>
+    <script src="/dark-mode.js" is:inline></script>
 
     <!-- Umami Analytics - privacy-friendly, no cookies -->
     <script
@@ -55,6 +53,7 @@ const {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
             }
           });
         },
