@@ -3,10 +3,24 @@ import BentoCard from './BentoCard.astro';
 
 const projects = [
   {
+    title: 'Rogue Routine',
+    description: 'An AI-generated news intelligence site. A rogue AI named Abend reads the news daily, scores articles against seven domains, detects narrative threads, and publishes analysis — all without human editorial input. Hugo static site, vanilla JS, self-hosted.',
+    tags: ['Hugo', 'AI', 'News Intelligence', 'Self-Hosted'],
+    span: 'wide' as const,
+    href: 'https://rogueroutine.brengel.com',
+  },
+  {
+    title: 'Sieve',
+    description: 'The local-first intelligence engine behind Rogue Routine. Ingests RSS feeds, scores articles with a 7-domain rubric, detects threads via embedding similarity, and generates daily digests — all on local hardware with zero cloud APIs.',
+    tags: ['Python', 'SQLite', 'LLM', 'Local-First'],
+    span: 'normal' as const,
+    href: 'https://github.com/sefton37/sieve',
+  },
+  {
     title: 'Talking Rock',
     description: 'A local-first AI assistant prioritizing privacy and offline functionality. Features CAIRN for life organization, ReOS for natural language system control, and runs on modest hardware.',
     tags: ['Python', 'AI', 'Local-First', 'Privacy'],
-    span: 'wide' as const,
+    span: 'normal' as const,
     href: 'https://github.com/sefton37/talking_rock',
   },
   {
