@@ -70,12 +70,8 @@ const jsonLd = {
     <!-- Prevent flash of unstyled content -->
     <script src="/dark-mode.js" is:inline></script>
 
-    <!-- Umami Analytics - privacy-friendly, no cookies -->
-    <script
-      defer
-      src="https://umami.brengel.com/script.js"
-      data-website-id="3ca932ab-ba22-4cff-aa75-fe04f2365fcc"
-    ></script>
+    <!-- Analytics - privacy-first, no cookies, no fingerprinting -->
+    <script defer src="https://analytics.brengel.com/beacon.js" data-site="kellogg"></script>
   </head>
   <body class="min-h-screen">
     <slot />
