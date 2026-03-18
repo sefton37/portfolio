@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  /* Dusk & Stone */
+  :root {
+    --color-surface: #0f1114;
+    --color-surface-raised: #1a1b1f;
+    --color-surface-overlay: #242629;
+    --color-text: #f0ece4;
+    --color-text-secondary: #8a8d96;
+    --color-text-muted: #555860;
+    --color-accent: #d4a856;
+    --color-accent-hover: #e0be6a;
+    --color-accent-muted: #a88240;
+    --color-accent-dim: #3d2e10;
+    --color-secondary: #5e7a94;
+    --color-secondary-hover: #7a96b0;
+    --color-secondary-dim: #1e2d3d;
+    --color-border: #2e3035;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -14,7 +32,8 @@
   }
 
   ::selection {
-    @apply bg-accent/30 text-text-primary;
+    background: rgba(212, 168, 86, 0.3);
+    color: var(--color-text);
   }
 
   /* Subtle grain texture overlay */

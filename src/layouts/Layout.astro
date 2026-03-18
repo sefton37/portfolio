@@ -26,6 +26,7 @@ const jsonLd = {
     "https://rogueroutine.brengel.com"
   ]
 };
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -43,10 +44,8 @@ const jsonLd = {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Fonts — self-hosted for GDPR compliance (no IP transmission to Google) -->
+    <link rel="stylesheet" href="/fonts.css" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

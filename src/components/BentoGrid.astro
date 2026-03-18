@@ -18,10 +18,38 @@ const projects = [
   },
   {
     title: 'Talking Rock',
-    description: 'A local-first AI assistant prioritizing privacy and offline functionality. Features CAIRN for life organization, ReOS for natural language system control, and runs on modest hardware.',
-    tags: ['Python', 'AI', 'Local-First', 'Privacy'],
+    description: 'An ecosystem of local-first AI agents built on a single philosophy: center your data around you, not in a data center, so your attention stays on what you value. Small models, zero cloud dependencies, outsized trust. Every agent verifies intent, requests permission, and keeps all learning auditable and editable by you.',
+    tags: ['Ecosystem', 'AI', 'Local-First', 'Privacy', 'Zero-Trust'],
+    span: 'wide' as const,
+    href: 'https://talkingrock.ai',
+  },
+  {
+    title: 'Cairn',
+    description: 'Personal attention minder — the root of the Talking Rock ecosystem. You talk to Cairn about your projects, priorities, and what you\'re waiting on. It surfaces what needs your attention and keeps context across conversations. Mirror, not manager.',
+    tags: ['Python', 'Textual TUI', 'SQLite', 'Ollama'],
     span: 'normal' as const,
-    href: 'https://github.com/sefton37/talking_rock',
+    href: 'https://github.com/sefton37/cairn',
+  },
+  {
+    title: 'RIVA',
+    description: 'Agent orchestrator for project management. Creates and supervises AI agents, enforces plan contracts, and holds agents accountable to those contracts. Plans are contracts. Correctness over speed.',
+    tags: ['Python', 'Agent Orchestration', 'SQLite'],
+    span: 'normal' as const,
+    href: 'https://github.com/sefton37/RIVA',
+  },
+  {
+    title: 'Helm',
+    description: 'Mobile interface for Cairn. A thin encrypted proxy that brings your attention minder to your phone over your local network — all agent logic stays on your machine.',
+    tags: ['Node.js', 'WebSocket', 'TLS', 'Mobile'],
+    span: 'normal' as const,
+    href: 'https://github.com/sefton37/helm',
+  },
+  {
+    title: 'NoLang',
+    description: 'A programming language designed for LLM generation, not human authorship. Fixed-width instructions, no naming ambiguity, one canonical form per computation. Eliminates the coin-flip problem of AI-generated code.',
+    tags: ['Rust', 'Language Design', 'LLM', 'Verification'],
+    span: 'normal' as const,
+    href: 'https://github.com/sefton37/nol',
   },
   {
     title: 'Portfolio Chat',
@@ -31,32 +59,11 @@ const projects = [
     href: 'https://github.com/sefton37/portfolio_chat',
   },
   {
-    title: 'Great Minds Roundtable',
-    description: 'AI-powered debate simulator where historical political thinkers like Locke, Hayek, and Foucault respond to questions in their characteristic voice with attributed quotes.',
-    tags: ['Claude Artifact', 'AI', 'Education'],
-    span: 'normal' as const,
-    href: 'https://claude.ai/public/artifacts/acd7153c-f8d3-4932-991c-2dd08a131a6e',
-  },
-  {
-    title: 'Total Cost of Inflation',
-    description: 'Interactive dashboard visualizing 50+ years of economic data, comparing purchasing power across income brackets and tracking healthcare, housing, and education costs.',
-    tags: ['Claude Artifact', 'Data Viz', 'Economics'],
-    span: 'normal' as const,
-    href: 'https://claude.ai/public/artifacts/820dd661-5aaf-4211-8cdc-f70857ce46e6',
-  },
-  {
     title: 'Prefect',
     description: 'Server-side AI steward for managing game servers. Provides process management, log monitoring, and command execution with safety guardrails through MCP and Qt interfaces.',
     tags: ['Python', 'MCP', 'Game Servers', 'AI'],
     span: 'normal' as const,
     href: 'https://github.com/sefton37/Prefect',
-  },
-  {
-    title: 'Ukraine Conflict OSINT Reader',
-    description: 'Intelligence dashboard aggregating open-source analysis from ISW, CSIS, and RUSI with AI-generated summaries, geospatial visualization, and priority filtering.',
-    tags: ['Claude Artifact', 'OSINT', 'Geopolitics'],
-    span: 'normal' as const,
-    href: 'https://claude.ai/public/artifacts/a59d851d-06f1-4fcc-b755-324781c13713',
   },
   {
     title: 'Portfolio',
@@ -75,7 +82,7 @@ const projects = [
 ];
 ---
 
-<section class="py-24 container-wide px-8 sm:px-12 lg:px-16">
+<section class="py-24 container-wide px-8 sm:px-12 lg:px-16 border-t border-secondary">
   <div class="mb-12 reveal">
     <h2 class="text-3xl font-semibold mb-4">Selected Work</h2>
     <p class="text-text-secondary max-w-2xl">

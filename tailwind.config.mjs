@@ -9,33 +9,32 @@ export default {
         mono: ['JetBrains Mono', 'Consolas', 'monospace'],
       },
       colors: {
-        // Neutral palette - warm grays
+        // Driven by CSS custom properties — see global.css for light/dark values
         surface: {
-          DEFAULT: '#0a0a0a',
-          raised: '#111318',
-          overlay: '#181b22',
+          DEFAULT: 'var(--color-surface)',
+          raised: 'var(--color-surface-raised)',
+          overlay: 'var(--color-surface-overlay)',
         },
         text: {
-          primary: '#fafafa',
-          secondary: '#a1a1a1',
-          muted: '#737373',
+          primary: 'var(--color-text)',
+          secondary: 'var(--color-text-secondary)',
+          muted: 'var(--color-text-muted)',
         },
         accent: {
-          DEFAULT: '#22d3ee',
-          hover: '#67e8f9',
-          muted: '#164e63',
-          dim: '#0e7490',
+          DEFAULT: 'var(--color-accent)',
+          hover: 'var(--color-accent-hover)',
+          muted: 'var(--color-accent-muted)',
+          dim: 'var(--color-accent-dim)',
+        },
+        secondary: {
+          DEFAULT: 'var(--color-secondary)',
+          hover: 'var(--color-secondary-hover)',
+          dim: 'var(--color-secondary-dim)',
         },
         border: {
-          DEFAULT: '#1e293b',
-          hover: '#0e7490',
+          DEFAULT: 'var(--color-border)',
+          hover: 'var(--color-accent)',
         },
-        cyan: {
-          DEFAULT: '#06b6d4',
-          light: '#22d3ee',
-          dark: '#0891b2',
-          glow: 'rgba(6, 182, 212, 0.15)',
-        }
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://kellogg.brengel.com',
   integrations: [tailwind(), sitemap()],
   build: {
-    // Inline small assets for fewer requests
-    inlineStylesheets: 'auto'
+    // Serve stylesheets as external files so style-src 'self' is sufficient (no unsafe-inline)
+    inlineStylesheets: 'never'
   }
 });
