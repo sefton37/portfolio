@@ -3,20 +3,6 @@ import BentoCard from './BentoCard.astro';
 
 const projects = [
   {
-    title: 'Rogue Routine',
-    description: 'An AI-generated news intelligence site. A rogue AI named Abend reads the news daily, scores articles against seven domains, detects narrative threads, and publishes analysis — all without human editorial input. Hugo static site, vanilla JS, self-hosted.',
-    tags: ['Hugo', 'AI', 'News Intelligence', 'Self-Hosted'],
-    span: 'wide' as const,
-    href: 'https://rogueroutine.brengel.com',
-  },
-  {
-    title: 'Sieve',
-    description: 'The local-first intelligence engine behind Rogue Routine. Ingests RSS feeds, scores articles with a 7-domain rubric, detects threads via embedding similarity, and generates daily digests — all on local hardware with zero cloud APIs.',
-    tags: ['Python', 'SQLite', 'LLM', 'Local-First'],
-    span: 'normal' as const,
-    href: 'https://github.com/sefton37/sieve',
-  },
-  {
     title: 'Talking Rock',
     description: 'An ecosystem of local-first AI agents built on a single philosophy: center your data around you, not in a data center, so your attention stays on what you value. Small models, zero cloud dependencies, outsized trust. Every agent verifies intent, requests permission, and keeps all learning auditable and editable by you.',
     tags: ['Ecosystem', 'AI', 'Local-First', 'Privacy', 'Zero-Trust'],
@@ -50,6 +36,20 @@ const projects = [
     tags: ['Rust', 'Language Design', 'LLM', 'Verification'],
     span: 'normal' as const,
     href: 'https://github.com/sefton37/nol',
+  },
+  {
+    title: 'Rogue Routine',
+    description: 'An AI-generated news intelligence site. A rogue AI named Abend reads the news daily, scores articles against seven domains, detects narrative threads, and publishes analysis — all without human editorial input. Hugo static site, vanilla JS, self-hosted.',
+    tags: ['Hugo', 'AI', 'News Intelligence', 'Self-Hosted'],
+    span: 'wide' as const,
+    href: 'https://rogueroutine.brengel.com',
+  },
+  {
+    title: 'Sieve',
+    description: 'The local-first intelligence engine behind Rogue Routine. Ingests RSS feeds, scores articles with a 7-domain rubric, detects threads via embedding similarity, and generates daily digests — all on local hardware with zero cloud APIs.',
+    tags: ['Python', 'SQLite', 'LLM', 'Local-First'],
+    span: 'normal' as const,
+    href: 'https://github.com/sefton37/sieve',
   },
   {
     title: 'Portfolio Chat',
